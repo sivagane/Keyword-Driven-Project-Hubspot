@@ -52,13 +52,12 @@ public class KeywordEngine {
 		int k = 0;
 		for (int i = 0; i < sheet.getLastRowNum(); i++) {
 			try {
-			String locatorColValue = sheet.getRow(i + 1).getCell(k + 1).toString().trim();//Trim is used to ignore space in Excel Sheet
-			if (!locatorColValue.equalsIgnoreCase("NA")) {
-				locatorName = locatorColValue.split("=")[0].trim();
-				locatorValue = locatorColValue.split("=")[1].trim();
-		   }
-			String action = sheet.getRow(i + 1).getCell(k + 2).toString().trim();
-			String value = sheet.getRow(i + 1).getCell(k + 3).toString().trim();
+			String locatorName = sheet.getRow(i + 1).getCell(k + 1).toString().trim();//Trim is used to ignore space in Excel Sheet
+			String locatorValue= sheet.getRow(i + 1).getCell(k + 2).toString().trim();
+			
+		   
+			String action = sheet.getRow(i + 1).getCell(k + 3).toString().trim();
+			String value = sheet.getRow(i + 1).getCell(k + 4).toString().trim();
 
 			switch (action) {
 			case "open browser":
@@ -92,8 +91,40 @@ public class KeywordEngine {
 				if (action.equals("sendkeys")) {
 					element.clear();
 					element.sendKeys(value);
-				} else {
+				} else if (action.equalsIgnoreCase("click")) {
 					element.click();
+				}
+				locatorValue = null;
+				break;
+				
+			case "className":
+				element = driver.findElement(By.className(locatorValue));
+				if (action.equals("sendkeys")) {
+					element.clear();
+					element.sendKeys(value);
+				} else if(action.equalsIgnoreCase("click")) {
+					element.click();
+				}else if
+					(action.equalsIgnoreCase("isDisplayed")) {
+					 element.isDisplayed();
+				}else if(action.equalsIgnoreCase("getText")) {
+					String text = element.getText();
+					System.out.println(text);
+				}
+				locatorValue = null;
+				break;
+				
+			case "xpath":
+				element = driver.findElement(By.xpath(locatorValue));
+				if (action.equals("sendkeys")) {
+					element.clear();
+					element.sendKeys(value);
+				} else if(action.equalsIgnoreCase("click")) {
+					element.click();
+				}else if
+					(action.equalsIgnoreCase("isDisplayed")) {
+					 boolean b = element.isDisplayed();
+					 System.out.println(b);
 				}
 				locatorValue = null;
 				break;

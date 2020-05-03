@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="81902" started-at="2020-05-01T06:27:39Z" finished-at="2020-05-01T06:29:01Z">
+  <suite name="Default suite" duration-ms="85015" started-at="2020-05-01T07:58:41Z" finished-at="2020-05-01T08:00:06Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="81902" started-at="2020-05-01T06:27:39Z" finished-at="2020-05-01T06:29:01Z">
+    <test name="Default test" duration-ms="85015" started-at="2020-05-01T07:58:41Z" finished-at="2020-05-01T08:00:06Z">
       <class name="org.KDD.TestCase.Runner">
-        <test-method status="PASS" signature="runner()[pri:0, instance:org.KDD.TestCase.Runner@224edc67]" name="runner" duration-ms="81840" started-at="2020-05-01T11:57:39Z" finished-at="2020-05-01T11:59:01Z">
+        <test-method status="PASS" signature="runner()[pri:1, instance:org.KDD.TestCase.Runner@224edc67]" name="runner" duration-ms="23945" started-at="2020-05-01T13:28:41Z" finished-at="2020-05-01T13:29:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runner -->
+        <test-method status="PASS" signature="runner1()[pri:2, instance:org.KDD.TestCase.Runner@224edc67]" name="runner1" duration-ms="61009" started-at="2020-05-01T13:29:05Z" finished-at="2020-05-01T13:30:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runner1 -->
       </class> <!-- org.KDD.TestCase.Runner -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

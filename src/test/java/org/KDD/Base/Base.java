@@ -8,6 +8,7 @@ import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -27,7 +28,10 @@ public class Base {
 			}
 			else {
 				driver= new ChromeDriver();
-			}
+			} 
+		}else if(browsername.equals("firefox")) {
+			WebDriverManager.firefoxdriver().setup();
+			driver=new FirefoxDriver();
 		}
 		return driver;
 	}
